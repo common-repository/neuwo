@@ -1,0 +1,71 @@
+{
+  "name": "neuwo",
+  "version": "1.0.0",
+  "description": "Fetch article metadata from Neuwo.ai API including",
+  "main": "build/neuwo-gutenberg.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "zip-it": "wp-scripts build && wp-scripts plugin-zip",
+    "update-zip": "node versioneer.js && wp-scripts build && wp-scripts plugin-zip",
+    "start": "wp-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/jasalt/neuwo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/jasalt/neuwo/issues"
+  },
+  "homepage": "https://gitlab.com/jasalt/neuwo#readme",
+  "eslintConfig": {
+    "extends": [
+      "plugin:@wordpress/eslint-plugin/recommended-with-formatting",
+      "prettier"
+    ],
+    "ignorePatterns": [
+      "neuwo-metabox.js",
+      "build/"
+    ]
+  },
+  "prettier": "@wordpress/prettier-config",
+  "stylelint": {
+    "extends": "@wordpress/stylelint-config/scss",
+    "ignoreFiles": [
+      "neuwo-metabox.css",
+      "build/"
+    ]
+  },
+  "devDependencies": {
+    "@wordpress/eslint-plugin": "^13.0.0",
+    "@wordpress/prettier-config": "^2.0.0",
+    "@wordpress/scripts": "^24.6.0",
+    "@wordpress/stylelint-config": "^21.0.0",
+    "eslint-config-prettier": "^8.5.0"
+  },
+  "dependencies": {
+    "@wordpress/api-fetch": "^6.13.0",
+    "@wordpress/components": "^20.0.0",
+    "@wordpress/core-data": "^4.14.0",
+    "@wordpress/data": "^7.0.0",
+    "@wordpress/edit-post": "^6.13.0",
+    "@wordpress/plugins": "^4.14.0",
+    "html-entities": "^2.3.3"
+  },
+  "files": [
+    "*.php",
+    "*.css",
+    "*.js",
+    "Assets",
+    "build",
+    "src",
+    "package.json"
+  ]
+}
